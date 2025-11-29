@@ -566,5 +566,11 @@ body {
 .login-back-btn:hover {
   background: #f3f4f6;
 }
+.logout-btn {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
 
 
