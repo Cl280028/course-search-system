@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>課程管理系統 - 登入</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <img src="image/logo.png" class="logo" alt="logo" />
+      <span class="system-title">課程管理系統</span>
+    </div>
+
+    <div class="header-right">
+      <a href="index.html" class="login">回到課程查詢</a>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="container login-page">
+    <section class="login-card">
+      <h1 class="login-title">登入系統</h1>
+      <p class="login-subtitle">請輸入帳號與密碼</p>
+
+      <!-- 這裡先做假登入：送出後直接跳到 dashboard.html -->
+      <form class="login-form" onsubmit="window.location.href='dashboard.html'; return false;">
+        <label class="login-label">帳號</label>
+        <input type="text" class="login-input" placeholder="請輸入學號或帳號" required />
+
+        <label class="login-label">密碼</label>
+        <input type="password" class="login-input" placeholder="請輸入密碼" required />
+
+        <div class="login-role">
+          <span class="login-label">身分</span>
+          <label><input type="radio" name="role" value="student" checked /> 學生</label>
+          <label><input type="radio" name="role" value="admin" /> 課程管理者</label>
+        </div>
+
+        <button type="submit" class="login-btn">登入</button>
+        <button type="button" class="login-back-btn" onclick="window.location.href='index.html';">
+          回到首頁
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    課程管理系統. All rights reserved.
+  </footer>
+
+</body>
+</html>
 
