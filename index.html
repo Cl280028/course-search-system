@@ -35,15 +35,21 @@
     <!-- 搜尋區塊 -->
     <section class="search-box">
 
- <div class="search-row">
-  <div class="input-group">
-    <label>課程名稱</label>
-    <div class="search-input-wrapper">
-      <input type="text" placeholder="輸入課程名稱..." />
-      <button class="search-btn-icon">🔍</button>
-    </div>
-  </div>
+<div class="search-input-wrapper">
+  <input
+    type="text"
+    placeholder="輸入課程名稱..."
+    list="course-suggestions"
+  />
+  <button class="search-btn-icon">🔍</button>
 </div>
+
+
+<datalist id="course-suggestions">
+  <option value="微積分"></option>
+  <option value="資料結構"></option>
+</datalist>
+
 
 
       <div class="filter-grid">
@@ -193,6 +199,7 @@
 
 </body>
 </html>
+
 
 
 
