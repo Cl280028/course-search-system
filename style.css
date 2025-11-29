@@ -571,6 +571,209 @@ body {
   text-align: center;
   text-decoration: none;
 }
+/* ========== Preselect page ========== */
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+}
+
+.top-nav a {
+  text-decoration: none;
+  color: #4b5563;
+}
+
+.top-nav a.active {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* 搜尋條件卡片 */
+
+.presearch-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 22px 24px 26px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.presearch-title {
+  font-size: 18px;
+  margin: 0 0 14px;
+}
+
+.presearch-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px 18px;
+}
+
+.presearch-field label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.presearch-field input,
+.presearch-field select {
+  width: 100%;
+  padding: 9px 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+}
+
+.presearch-field input:focus,
+.presearch-field select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.12);
+}
+
+.presearch-actions {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.presearch-btn {
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.presearch-btn:hover {
+  background: #1d4ed8;
+}
+
+/* 下方兩欄布局 */
+
+.preselect-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.course-list-card,
+.mylist-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px 22px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+}
+
+.mylist-card {
+  background: #f1f5f9;
+}
+
+.card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.card-header-row h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.card-subtitle {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* 課程項目 */
+
+.course-item,
+.mycourse-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 8px;
+  border-radius: 10px;
+  background: #f9fafb;
+  margin-bottom: 8px;
+}
+
+.mycourse-item {
+  background: #e5edf8;
+}
+
+.course-name {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.course-meta {
+  font-size: 13px;
+  color: #4b5563;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* 按鈕 */
+
+.btn-add {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.btn-add:hover {
+  background: #1d4ed8;
+}
+
+.btn-remove {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: none;
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.btn-remove:hover {
+  background: #dc2626;
+}
+
+.mylist-footer {
+  margin-top: 14px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-export {
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 10px;
+  border: none;
+  background: #16a34a;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-export:hover {
+  background: #15803d;
+}
+
 
 
 
