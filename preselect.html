@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>課程管理系統 - 預選課程</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <img src="image/logo.png" class="logo" alt="logo" />
+      <span class="system-title">課程管理系統</span>
+    </div>
+
+    <div class="header-right">
+      <nav class="top-nav">
+        <a href="index.html">課程查詢</a>
+        <a href="preselect.html" class="active">預選課程</a>
+        <a href="#">預選課結果</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="container">
+
+    <!-- 搜尋條件卡片 -->
+    <section class="presearch-card">
+      <h2 class="presearch-title">課程搜尋</h2>
+
+      <div class="presearch-grid">
+        <!-- 第一列 -->
+        <div class="presearch-field">
+          <label>課程搜尋</label>
+          <input type="text" placeholder="請輸入課程名稱或代碼" />
+        </div>
+
+        <div class="presearch-field">
+          <label>學制</label>
+          <select>
+            <option>全部</option>
+            <option>二專</option>
+            <option>二技</option>
+            <option>四技</option>
+            <option>碩士班</option>
+          </select>
+        </div>
+
+        <div class="presearch-field">
+          <label>學期</label>
+          <select>
+            <option>113學年度第1學期</option>
+            <option>113學年度第2學期</option>
+            <option>114學年度第1學期</option>
+          </select>
+        </div>
+
+        <div class="presearch-field">
+          <label>學院</label>
+          <select>
+            <option>全部</option>
+            <option>資訊管理系</option>
+            <option>護理系</option>
+            <option>健康事業管理系</option>
+          </select>
+        </div>
+
+        <!-- 第二列 -->
+        <div class="presearch-field">
+          <label>年級</label>
+          <select>
+            <option>全部</option>
+            <option>一年級</option>
+            <option>二年級</option>
+            <option>三年級</option>
+            <option>四年級</option>
+          </select>
+        </div>
+
+        <div class="presearch-field">
+          <label>星期</label>
+          <select>
+            <option>全部</option>
+            <option>星期一</option>
+            <option>星期二</option>
+            <option>星期三</option>
+            <option>星期四</option>
+            <option>星期五</option>
+          </select>
+        </div>
+
+        <div class="presearch-field">
+          <label>時段</label>
+          <select>
+            <option>全部</option>
+            <option>第1–2節</option>
+            <option>第3–4節</option>
+            <option>第5–6節</option>
+          </select>
+        </div>
+
+        <div class="presearch-actions">
+          <button class="presearch-btn">🔍 查詢</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 下方左右兩個卡片 -->
+    <section class="preselect-layout">
+      <!-- 左：課程列表 -->
+      <div class="course-list-card">
+        <div class="card-header-row">
+          <div>
+            <h3>課程列表</h3>
+            <p class="card-subtitle">共找到 24 門課程</p>
+          </div>
+        </div>
+
+        <div class="course-item">
+          <div class="course-info">
+            <div class="course-name">計算機概論</div>
+            <div class="course-meta">
+              <div>👨‍🏫 王教授</div>
+              <div>📅 星期一－第2,3節</div>
+              <div>📍 A101 教室</div>
+            </div>
+          </div>
+          <button class="btn-add">加入預選</button>
+        </div>
+
+        <div class="course-item">
+          <div class="course-info">
+            <div class="course-name">資料結構</div>
+            <div class="course-meta">
+              <div>👨‍🏫 李教授</div>
+              <div>📅 星期二－第3,4節</div>
+              <div>📍 B205 教室</div>
+            </div>
+          </div>
+          <button class="btn-add">加入預選</button>
+        </div>
+
+        <div class="course-item">
+          <div class="course-info">
+            <div class="course-name">程式設計</div>
+            <div class="course-meta">
+              <div>👨‍🏫 張教授</div>
+              <div>📅 星期三－第1,2節</div>
+              <div>📍 C301 電腦教室</div>
+            </div>
+          </div>
+          <button class="btn-add">加入預選</button>
+        </div>
+      </div>
+
+      <!-- 右：我的預選清單 -->
+      <div class="mylist-card">
+        <div class="card-header-row">
+          <div>
+            <h3>我的預選清單</h3>
+            <p class="card-subtitle">已選 3 門課程</p>
+          </div>
+        </div>
+
+        <div class="mycourse-item">
+          <div class="course-info">
+            <div class="course-name">計算機概論</div>
+            <div class="course-meta">
+              <div>👨‍🏫 王教授</div>
+              <div>📅 星期一－第2,3節</div>
+              <div>📍 A101 教室</div>
+            </div>
+          </div>
+          <button class="btn-remove">移除</button>
+        </div>
+
+        <div class="mycourse-item">
+          <div class="course-info">
+            <div class="course-name">資料結構</div>
+            <div class="course-meta">
+              <div>👨‍🏫 李教授</div>
+              <div>📅 星期二－第3,4節</div>
+              <div>📍 B205 教室</div>
+            </div>
+          </div>
+          <button class="btn-remove">移除</button>
+        </div>
+
+        <div class="mycourse-item">
+          <div class="course-info">
+            <div class="course-name">微積分</div>
+            <div class="course-meta">
+              <div>👨‍🏫 陳教授</div>
+              <div>📅 星期四－第2,3,4節</div>
+              <div>📍 D102 教室</div>
+            </div>
+          </div>
+          <button class="btn-remove">移除</button>
+        </div>
+
+        <div class="mylist-footer">
+          <button class="btn-export">匯出預選結果</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    課程管理系統. All rights reserved.
+  </footer>
+
+</body>
+</html>
