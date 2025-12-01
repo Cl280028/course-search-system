@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>課程管理系統 - 新增課程</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 共用上方 Header（跟前台一樣風格） -->
+  <header class="header">
+    <div class="header-left">
+      <img src="image/logo.png" class="logo" alt="logo" />
+      <span class="system-title">課程管理系統</span>
+    </div>
+
+    <div class="header-right">
+      <nav class="top-nav">
+        <a href="admin.html">課程列表</a>
+        <a href="new-course.html" class="active">新增課程</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container course-form-page">
+
+    <!-- 麵包屑 -->
+    <div class="breadcrumb">
+      課程管理 &gt; <span>新增課程</span>
+    </div>
+
+    <!-- 新增課程卡片 -->
+    <section class="course-form-card">
+      <div class="course-form-header">
+        <div class="course-form-icon">＋</div>
+        <div>
+          <h2 class="course-form-title">新增課程</h2>
+          <p class="course-form-subtitle">填寫以下資訊來新增一門新課程到系統中</p>
+        </div>
+      </div>
+
+      <form class="course-form">
+
+        <!-- 基本資訊 -->
+        <div class="form-block">
+          <div class="form-block-title">
+            <span class="block-icon">ℹ️</span>
+            <span>基本資訊</span>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-field">
+              <label>課程名稱<span class="required">*</span></label>
+              <input type="text" placeholder="請輸入課程名稱" required />
+            </div>
+
+            <div class="form-field">
+              <label>授課老師<span class="required">*</span></label>
+              <input type="text" placeholder="請輸入授課老師姓名" required />
+            </div>
+
+            <div class="form-field">
+              <label>教室</label>
+              <input type="text" placeholder="請輸入教室編號" />
+            </div>
+
+            <div class="form-field">
+              <label>限修人數</label>
+              <input type="number" placeholder="請輸入限修人數" />
+            </div>
+          </div>
+        </div>
+
+        <!-- 學術資訊 -->
+        <div class="form-block">
+          <div class="form-block-title">
+            <span class="block-icon">🎓</span>
+            <span>學術資訊</span>
+          </div>
+
+          <div class="form-grid-3">
+            <div class="form-field">
+              <label>學制<span class="required">*</span></label>
+              <select required>
+                <option value="">請選擇學制</option>
+                <option>二專</option>
+                <option>二技</option>
+                <option>四技</option>
+                <option>碩士班</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label>學院<span class="required">*</span></label>
+              <select required>
+                <option value="">請選擇學院</option>
+                <option>資訊管理系</option>
+                <option>護理系</option>
+                <option>健康事業管理系</option>
+                <option>嬰幼兒保育系</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label>年級<span class="required">*</span></label>
+              <select required>
+                <option value="">請選擇年級</option>
+                <option>一年級</option>
+                <option>二年級</option>
+                <option>三年級</option>
+                <option>四年級</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- 課程時間 -->
+        <div class="form-block">
+          <div class="form-block-title">
+            <span class="block-icon">🕒</span>
+            <span>課程時間</span>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-field">
+              <label>星期<span class="required">*</span></label>
+              <select required>
+                <option value="">請選擇星期</option>
+                <option>星期一</option>
+                <option>星期二</option>
+                <option>星期三</option>
+                <option>星期四</option>
+                <option>星期五</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label>節次<span class="required">*</span></label>
+              <select required>
+                <option value="">請選擇節次</option>
+                <option>第1–2節</option>
+                <option>第3–4節</option>
+                <option>第5–6節</option>
+                <option>第7–8節</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- 課程描述 -->
+        <div class="form-block">
+          <div class="form-block-title">
+            <span class="block-icon">📘</span>
+            <span>課程描述</span>
+          </div>
+
+          <div class="form-field">
+            <label>課程簡介</label>
+            <textarea rows="4" placeholder="請輸入課程簡介…"></textarea>
+          </div>
+        </div>
+
+        <!-- 底部按鈕 -->
+        <div class="form-actions">
+          <button type="button" class="btn-cancel" onclick="window.location.href='admin.html';">
+            取消
+          </button>
+          <button type="submit" class="btn-submit">
+            ＋ 新增課程
+          </button>
+        </div>
+
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    課程管理系統. All rights reserved.
+  </footer>
+
+</body>
+</html>
