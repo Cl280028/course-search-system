@@ -773,6 +773,252 @@ body {
 .btn-export:hover {
   background: #15803d;
 }
+/* ========== Admin (課程管理) page ========== */
+
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f3f4f6;
+}
+
+/* 側邊欄 */
+
+.admin-sidebar {
+  width: 220px;
+  background: #f9fafb;
+  border-right: 1px solid #e5e7eb;
+  padding: 20px 16px;
+}
+
+.sidebar-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #374151;
+  font-size: 14px;
+}
+
+.sidebar-item.active {
+  background: #e0edff;
+  color: #2563eb;
+}
+
+/* 右側主內容 */
+
+.admin-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 上方 header */
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-page-title {
+  margin: 0;
+  font-size: 20px;
+}
+
+.admin-page-subtitle {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.admin-header-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.admin-bell {
+  font-size: 20px;
+}
+
+.admin-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: #f97316;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+/* 內容區 */
+
+.admin-content {
+  padding: 18px 24px 32px;
+}
+
+/* 工具列 */
+
+.admin-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.toolbar-left {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-import-course {
+  background: #16a34a;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-import-course:hover {
+  background: #15803d;
+}
+
+.btn-new-course {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-new-course:hover {
+  background: #1d4ed8;
+}
+
+/* 搜尋框 */
+
+.admin-search-wrapper {
+  display: flex;
+  align-items: center;
+  background: #f9fafb;
+  border-radius: 999px;
+  padding: 4px 12px;
+  border: 1px solid #e5e7eb;
+  min-width: 260px;
+}
+
+.admin-search-wrapper .search-icon {
+  margin-right: 6px;
+}
+
+.admin-search-wrapper input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+}
+
+/* 表格卡片 */
+
+.admin-table-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+  padding: 10px 0 10px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 10px 18px;
+  text-align: left;
+}
+
+.admin-table thead {
+  background: #f9fafb;
+}
+
+.admin-table tbody tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-edit,
+.action-delete {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.action-edit {
+  color: #2563eb;
+}
+
+.action-delete {
+  color: #ef4444;
+}
+
+/* 表格 footer & 分頁 */
+
+.admin-table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 18px 10px;
+  border-top: 1px solid #e5e7eb;
+  font-size: 13px;
+  color: #4b5563;
+}
+
+.page-btn {
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.page-btn.active {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
 
 
 
