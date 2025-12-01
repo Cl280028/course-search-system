@@ -25,8 +25,8 @@
       <h1 class="login-title">登入系統</h1>
       <p class="login-subtitle">請輸入帳號與密碼</p>
 
-      <!-- 這裡先做假登入：送出後直接跳到 dashboard.html -->
-      <form class="login-form" onsubmit="window.location.href='dashboard.html'; return false;">
+      <!-- 已修改：呼叫 handleLogin() -->
+      <form class="login-form" onsubmit="return handleLogin(event);">
         <label class="login-label">帳號</label>
         <input type="text" class="login-input" placeholder="請輸入學號或帳號" required />
 
@@ -51,6 +51,26 @@
     課程管理系統. All rights reserved.
   </footer>
 
+  <!-- Login 身分判斷腳本 -->
+  <script>
+    function handleLogin(event) {
+      event.preventDefault(); // 阻止表單真的送出
+
+      // 取得選到的身分
+      const role = document.querySelector('input[name="role"]:checked').value;
+
+      if (role === "admin") {
+        // 👉 課程管理者 → admin.html
+        window.location.href = "admin.html";
+      } else {
+        // 👉 學生 → dashboard.html
+        window.location.href = "dashboard.html";
+      }
+      return false;
+    }
+  </script>
+
 </body>
 </html>
+
 
