@@ -1355,17 +1355,20 @@ body {
   background: #fecaca;
 }
 
+/* 課表統一格子大小 */
 .mock-timetable table {
   width: 100%;
   border-collapse: collapse;
   font-size: 13px;
+  table-layout: fixed;      /* 每格固定寬度 */
 }
 
 .mock-timetable th,
 .mock-timetable td {
   border: 1px solid #e5e7eb;
   text-align: center;
-  padding: 6px 4px;
+  height: 52px;            /* 每一格固定高度 */
+  padding: 0;              /* 讓高度完全一致 */
 }
 
 .mock-timetable thead th {
@@ -1374,29 +1377,20 @@ body {
 }
 
 .time-cell {
-  width: 60px;
+  width: 70px;
   background: #f9fafb;
 }
 
-.slot {
-  background: #f9fafb;
-}
-
-.slot {
-  position: relative;
+/* 藍色格子：每一格大小完全一樣，文字置中 */
+.slot-blue {
   background: #dbeafe;
-  text-align: center;
-  font-size: 13px;
-  padding: 0;
-  line-height: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
-.slot span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+
 
 
 
