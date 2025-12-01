@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>課程模擬系統 - 預選結果</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 頂部列 -->
+  <header class="header">
+    <div class="header-left">
+      <span class="system-title">課程模擬系統</span>
+    </div>
+
+    <div class="header-right">
+      <button class="logout-chip" onclick="window.location.href='login.html';">
+        ↩ 登出系統
+      </button>
+      <div class="mock-user">
+        <div class="mock-avatar">小</div>
+        <span class="mock-username">陳小明</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mock-layout">
+
+    <!-- 左側：預選課清單 -->
+    <section class="mock-left-card">
+      <div class="mock-left-header">
+        <h3>預選課清單</h3>
+        <span class="mock-count">3 門課程</span>
+      </div>
+
+      <div class="mock-course-item">
+        <div class="mock-course-title">計算機概論</div>
+        <div class="mock-course-meta">
+          <div>🕒 週一 09:10–12:00</div>
+          <div>📍 資訊大樓 R301</div>
+        </div>
+        <button class="mock-trash">🗑️</button>
+      </div>
+
+      <div class="mock-course-item">
+        <div class="mock-course-title">微積分</div>
+        <div class="mock-course-meta">
+          <div>🕒 週三 12:30–16:10</div>
+          <div>📍 數學館 M201</div>
+        </div>
+        <button class="mock-trash">🗑️</button>
+      </div>
+
+      <div class="mock-course-item">
+        <div class="mock-course-title">英文閱讀</div>
+        <div class="mock-course-meta">
+          <div>🕒 週三 10:20–12:10</div>
+          <div>📍 文學院 L105</div>
+        </div>
+        <button class="mock-trash">🗑️</button>
+      </div>
+
+      <div class="mock-left-footer">
+        <button class="mock-btn-ghost" onclick="window.location.href='preselect.html';">
+          清空預選
+        </button>
+        <button class="mock-btn-primary">
+          ✔ 確認模擬結果
+        </button>
+      </div>
+    </section>
+
+    <!-- 右側：課表模擬 -->
+    <section class="mock-right-card">
+      <div class="mock-right-header">
+        <h3>課表模擬</h3>
+        <div class="mock-legend">
+          <span class="legend-item"><span class="legend-box legend-blue"></span> 已選課程</span>
+          <span class="legend-item"><span class="legend-box legend-red"></span> 時間衝突</span>
+        </div>
+      </div>
+
+      <div class="mock-timetable">
+        <table>
+          <thead>
+            <tr>
+              <th>節次</th>
+              <th>週一</th>
+              <th>週二</th>
+              <th>週三</th>
+              <th>週四</th>
+              <th>週五</th>
+              <th>週六</th>
+              <th>週日</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- 只示意幾節就好，你可以依需求再加 -->
+            <tr>
+              <td class="time-cell">1<br>08:10</td>
+              <td></td>
+              <td></td>
+              <td class="slot slot-blue">英文閱讀</td>
+              <td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td class="time-cell">2<br>09:10</td>
+              <td class="slot slot-blue" rowspan="3">計算機概論</td>
+              <td></td>
+              <td class="slot slot-blue" rowspan="2">英文閱讀</td>
+              <td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td class="time-cell">3<br>10:10</td>
+              <td></td>
+              <td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td class="time-cell">4<br>11:10</td>
+              <td></td>
+              <td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td class="time-cell">5<br>12:10</td>
+              <td></td><td></td>
+              <td class="slot slot-blue" rowspan="3">微積分</td>
+              <td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td class="time-cell">6<br>13:10</td>
+              <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+              <td class="time-cell">7<br>14:10</td>
+              <td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
