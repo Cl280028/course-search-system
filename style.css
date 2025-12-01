@@ -1382,9 +1382,22 @@ body {
   background: #f9fafb;
 }
 
-.slot-blue {
+.slot {
+  position: relative;
   background: #dbeafe;
+  text-align: center;
+  font-size: 13px;
+  padding: 0;
+  line-height: normal;
 }
+
+.slot span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 
 
 
