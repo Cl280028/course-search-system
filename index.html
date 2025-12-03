@@ -1,13 +1,10 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
   <title>課程管理系統 - 課程查詢</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-  <script src="main.js"></script>
-</body>
-</html>
 
 <body>
 
@@ -19,14 +16,12 @@
     </div>
 
     <div class="header-right">
-  <div class="notify-area">
-    <span class="bell-icon">🔔</span>
-    <span class="notify-text">通知</span>
-  </div>
-  <a href="login.html" class="login">登入</a>
-</div>
-
-
+      <div class="notify-area">
+        <span class="bell-icon">🔔</span>
+        <span class="notify-text">通知</span>
+      </div>
+      <a href="login.html" class="login">登入</a>
+    </div>
   </header>
 
   <!-- Main Container -->
@@ -39,95 +34,92 @@
     <!-- 搜尋區塊 -->
     <section class="search-box">
 
-<div class="search-input-wrapper">
-  <input
-    type="text"
-    placeholder="輸入課程名稱..."
-    list="course-suggestions"
-  />
-  <button class="search-btn-icon">🔍</button>
-</div>
+      <div class="search-input-wrapper">
+        <input
+          type="text"
+          id="keyword"
+          placeholder="輸入課程名稱..."
+          list="course-suggestions"
+        />
+        <button class="search-btn-icon" id="icon-search-btn">🔍</button>
+      </div>
 
-
-<datalist id="course-suggestions">
-  <option value="微積分"></option>
-  <option value="資料結構"></option>
-</datalist>
-
-
+      <datalist id="course-suggestions">
+        <option value="微積分"></option>
+        <option value="資料結構"></option>
+      </datalist>
 
       <div class="filter-grid">
-  <!-- 學制 -->
-  <select name="degree">
-    <option value="">全部學制</option>
-    <option value="二專">二專</option>
-    <option value="二技">二技</option>
-    <option value="四技">四技</option>
-    <option value="碩士班">碩士班</option>
-  </select>
+        <!-- 學制 -->
+        <select name="degree" id="degree">
+          <option value="">全部學制</option>
+          <option value="二專">二專</option>
+          <option value="二技">二技</option>
+          <option value="四技">四技</option>
+          <option value="碩士班">碩士班</option>
+        </select>
 
-  <!-- 學期 -->
-  <select name="semester">
-    <option value="">全部學期</option>
-    <option value="113-1">113上</option>
-    <option value="113-2">113下</option>
-    <option value="114-1">114上</option>
-  </select>
+        <!-- 學期 -->
+        <select name="semester" id="semester">
+          <option value="">全部學期</option>
+          <option value="113-1">113上</option>
+          <option value="113-2">113下</option>
+          <option value="114-1">114上</option>
+        </select>
 
-  <!-- 學院 / 系所 -->
-  <select name="department">
-    <option value="">全部學院</option>
-    <option value="資訊管理系">資訊管理系</option>
-    <option value="護理系">護理系</option>
-    <option value="健康事業管理系">健康事業管理系</option>
-    <option value="嬰幼兒保育系">嬰幼兒保育系</option>
-    <option value="運動保健系">運動保健系</option>
-    <option value="語言治療與聽力學系">語言治療與聽力學系</option>
-    <option value="休閒產業與健康促進系">休閒產業與健康促進系</option>
-  </select>
+        <!-- 學院 / 系所 -->
+        <select name="department" id="department">
+          <option value="">全部學院</option>
+          <option value="資訊管理系">資訊管理系</option>
+          <option value="護理系">護理系</option>
+          <option value="健康事業管理系">健康事業管理系</option>
+          <option value="嬰幼兒保育系">嬰幼兒保育系</option>
+          <option value="運動保健系">運動保健系</option>
+          <option value="語言治療與聽力學系">語言治療與聽力學系</option>
+          <option value="休閒產業與健康促進系">休閒產業與健康促進系</option>
+        </select>
 
-  <!-- 年級 -->
-  <select name="grade">
-    <option value="">全部年級</option>
-    <option value="1">1年級</option>
-    <option value="2">2年級</option>
-    <option value="3">3年級</option>
-    <option value="4">4年級</option>
-    <option value="5">5年級</option>
-    <option value="6">6年級</option>
-    <option value="7">7年級</option>
-  </select>
+        <!-- 年級 -->
+        <select name="grade" id="grade">
+          <option value="">全部年級</option>
+          <option value="1">1年級</option>
+          <option value="2">2年級</option>
+          <option value="3">3年級</option>
+          <option value="4">4年級</option>
+          <option value="5">5年級</option>
+          <option value="6">6年級</option>
+          <option value="7">7年級</option>
+        </select>
 
-  <!-- 星期 -->
-  <select name="weekday">
-    <option value="">全部星期</option>
-    <option value="1">星期一</option>
-    <option value="2">星期二</option>
-    <option value="3">星期三</option>
-    <option value="4">星期四</option>
-    <option value="5">星期五</option>
-  </select>
+        <!-- 星期 -->
+        <select name="weekday" id="weekday">
+          <option value="">全部星期</option>
+          <option value="1">星期一</option>
+          <option value="2">星期二</option>
+          <option value="3">星期三</option>
+          <option value="4">星期四</option>
+          <option value="5">星期五</option>
+        </select>
 
-  <!-- 時段 -->
-  <select name="period">
-    <option value="">全部時段</option>
-    <option value="1">第1節</option>
-    <option value="2">第2節</option>
-    <option value="3">第3節</option>
-    <option value="4">第4節</option>
-    <option value="5">第5節</option>
-    <option value="6">第6節</option>
-    <option value="7">第7節</option>
-    <option value="8">第8節</option>
-    <option value="9">第9節</option>
-    <option value="10">第10節</option>
-  </select>
-</div>
-
+        <!-- 時段 -->
+        <select name="period" id="period">
+          <option value="">全部時段</option>
+          <option value="1">第1節</option>
+          <option value="2">第2節</option>
+          <option value="3">第3節</option>
+          <option value="4">第4節</option>
+          <option value="5">第5節</option>
+          <option value="6">第6節</option>
+          <option value="7">第7節</option>
+          <option value="8">第8節</option>
+          <option value="9">第9節</option>
+          <option value="10">第10節</option>
+        </select>
+      </div>
 
       <div class="button-row">
-        <button class="reset-btn">⟲ 重置</button>
-        <button class="search-btn">查詢</button>
+        <button class="reset-btn" id="reset-btn">⟲ 重置</button>
+        <button class="search-btn" id="search-btn">查詢</button>
       </div>
 
     </section>
@@ -135,7 +127,7 @@
     <!-- 查詢結果 -->
     <section class="result-box">
       <div class="result-header">
-        <span>查詢結果（共找到 <strong>156</strong> 筆課程）</span>
+        <span>查詢結果（共找到 <strong id="result-count">0</strong> 筆課程）</span>
         <button class="export-btn">匯出</button>
       </div>
 
@@ -152,38 +144,12 @@
           </tr>
         </thead>
 
-        <tbody>
-          <tr>
-            <td>資料結構<br><span class="code">CS201</span></td>
-            <td>王大明</td>
-            <td>星期三 10:10–12:00</td>
-            <td>工程館 201</td>
-            <td><span class="credit-tag">3學分</span></td>
-            <td><a href="#" class="view-link">👁 查看</a></td>
-          </tr>
-
-          <tr>
-            <td>微積分<br><span class="code">MATH101</span></td>
-            <td>李小華</td>
-            <td>星期一 08:10–10:00</td>
-            <td>理學館 105</td>
-            <td><span class="credit-tag">4學分</span></td>
-            <td><a href="#" class="view-link">👁 查看</a></td>
-          </tr>
-
-          <tr>
-            <td>作業系統<br><span class="code">CS301</span></td>
-            <td>張志強</td>
-            <td>星期五 13:10–15:00</td>
-            <td>工程館 305</td>
-            <td><span class="credit-tag">3學分</span></td>
-            <td><a href="#" class="view-link">👁 查看</a></td>
-          </tr>
-
+        <tbody id="course-table-body">
+          <!-- 這裡的內容會用 JavaScript 動態產生 -->
         </tbody>
       </table>
 
-      <!-- Pagination -->
+      <!-- Pagination（目前先假裝，JS 不處理分頁） -->
       <div class="pagination">
         <a class="active">1</a>
         <a>2</a>
@@ -201,8 +167,11 @@
     課程管理系統. All rights reserved.
   </footer>
 
+  <!-- 掛在最後，等 HTML 都載完再載 JS -->
+  <script src="main.js"></script>
 </body>
 </html>
+
 
 
 
