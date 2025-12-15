@@ -169,8 +169,31 @@
 
   <!-- 掛在最後，等 HTML 都載完再載 JS -->
   <script src="main.js"></script>
+
+  <!-- 課程詳細資訊 Modal -->
+<div id="courseModal" class="modal-overlay" style="display:none;">
+  <div class="modal-card">
+    <h2 id="modal-title">課程名稱</h2>
+
+    <div class="modal-content">
+      <p><strong>課程代碼：</strong><span id="modal-code"></span></p>
+      <p><strong>授課教師：</strong><span id="modal-teacher"></span></p>
+      <p><strong>上課時間：</strong><span id="modal-time"></span></p>
+      <p><strong>教室：</strong><span id="modal-room"></span></p>
+      <p><strong>學分數：</strong><span id="modal-credits"></span></p>
+      <p><strong>課程簡介：</strong></p>
+      <p id="modal-desc" class="modal-desc"></p>
+    </div>
+
+    <div class="modal-actions">
+      <button onclick="closeModal()">關閉</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
+
 
 
 
