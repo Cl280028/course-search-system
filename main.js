@@ -135,4 +135,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   resetBtn.addEventListener("click", resetFilters);
 });
+function openModal(course) {
+  document.getElementById("modal-title").innerText = course.name;
+  document.getElementById("modal-code").innerText = course.code;
+  document.getElementById("modal-teacher").innerText = course.teacher;
+  document.getElementById("modal-time").innerText = course.time;
+  document.getElementById("modal-room").innerText = course.room;
+  document.getElementById("modal-credits").innerText = course.credits;
+  document.getElementById("modal-desc").innerText = course.desc;
+
+  document.getElementById("courseModal").style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("courseModal").style.display = "none";
+}
 
