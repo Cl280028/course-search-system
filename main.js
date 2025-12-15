@@ -8,11 +8,12 @@ const courses = [
     semester: "113-1",
     department: "資訊管理系",
     grade: "2",
-    weekday: "3",           // 星期三
+    weekday: "3",
     periods: ["3", "4"],
     timeText: "星期三 10:10–12:00",
     room: "工程館 201",
-    credits: 3
+    credits: 3,
+    description: "介紹基本資料結構概念，如陣列、串列、堆疊、佇列與樹狀結構。"
   },
   {
     name: "微積分",
@@ -22,11 +23,12 @@ const courses = [
     semester: "113-1",
     department: "健康事業管理系",
     grade: "1",
-    weekday: "1",           // 星期一
+    weekday: "1",
     periods: ["1", "2"],
     timeText: "星期一 08:10–10:00",
     room: "理學館 105",
-    credits: 4
+    credits: 4,
+    description: "涵蓋極限、微分與積分的基本概念與應用。"
   },
   {
     name: "作業系統",
@@ -36,38 +38,56 @@ const courses = [
     semester: "113-2",
     department: "資訊管理系",
     grade: "3",
-    weekday: "5",           // 星期五
+    weekday: "5",
     periods: ["7", "8"],
     timeText: "星期五 13:10–15:00",
     room: "工程館 305",
-    credits: 3
+    credits: 3,
+    description: "介紹作業系統核心概念，如行程管理、記憶體管理與檔案系統。"
   }
 ];
 
-// ====== 把課程資料畫到表格上 ======
+// ====== 把課程資料畫到表格上（重點在這）======
 function renderTable(list) {
   const tbody = document.getElementById("course-table-body");
   const resultCount = document.getElementById("result-count");
 
   tbody.innerHTML = "";
+  resultCount.textContent = list.length;
 
   list.forEach(c => {
     const tr = document.createElement("tr");
+
     tr.innerHTML = `
-      <td>${c.name}<br><span class="code">${c.code}</span></td>
+      <td>
+        ${c.name}<br>
+        <span class="code">${c.code}</span>
+      </td>
       <td>${c.teacher}</td>
       <td>${c.timeText}</td>
       <td>${c.room}</td>
       <td><span class="credit-tag">${c.credits}學分</span></td>
-      <td><a href="#" class="view-link">👁 查看</a></td>
+      <td>
+        <a href="javascript:void(0)" class="view-link"
+           onclick='openModal({
+             name: "${c.name}",
+             code: "${c.code}",
+             teacher: "${c.teacher}",
+             time: "${c.timeText}",
+             room: "${c.room}",
+             credits: "${c.credits} 學分",
+             desc: "${c.description}"
+           })'>
+           👁 查看
+        </a>
+      </td>
     `;
+
     tbody.appendChild(tr);
   });
-
-  resultCount.textContent = list.length;
 }
 
-// ====== 讀取畫面上的查詢條件，回傳篩選後的課程 ======
+// ====== 讀取畫面上的查詢條件 ======
 function getFilteredCourses() {
   const keyword = document.getElementById("keyword").value.trim();
   const degree = document.getElementById("degree").value;
@@ -78,12 +98,11 @@ function getFilteredCourses() {
   const period = document.getElementById("period").value;
 
   return courses.filter(c => {
-    // 關鍵字：比對課程名稱 / 老師 / 課程代碼
     if (keyword) {
       const hit =
         c.name.includes(keyword) ||
         c.teacher.includes(keyword) ||
-        (c.code && c.code.includes(keyword));
+        c.code.includes(keyword);
       if (!hit) return false;
     }
 
@@ -92,16 +111,13 @@ function getFilteredCourses() {
     if (department && c.department !== department) return false;
     if (grade && c.grade !== grade) return false;
     if (weekday && c.weekday !== weekday) return false;
-
-    if (period) {
-      if (!c.periods || !c.periods.includes(period)) return false;
-    }
+    if (period && !c.periods.includes(period)) return false;
 
     return true;
   });
 }
 
-// ====== 重置查詢條件 ======
+// ====== 重置 ======
 function resetFilters() {
   document.getElementById("keyword").value = "";
   document.getElementById("degree").value = "";
@@ -114,27 +130,7 @@ function resetFilters() {
   renderTable(courses);
 }
 
-// ====== 頁面載入完成後綁定事件 ======
-document.addEventListener("DOMContentLoaded", () => {
-  // 一開始先顯示全部課程
-  renderTable(courses);
-
-  const searchBtn = document.getElementById("search-btn");
-  const iconSearchBtn = document.getElementById("icon-search-btn");
-  const resetBtn = document.getElementById("reset-btn");
-
-  searchBtn.addEventListener("click", () => {
-    const filtered = getFilteredCourses();
-    renderTable(filtered);
-  });
-
-  iconSearchBtn.addEventListener("click", () => {
-    const filtered = getFilteredCourses();
-    renderTable(filtered);
-  });
-
-  resetBtn.addEventListener("click", resetFilters);
-});
+// ====== Modal ======
 function openModal(course) {
   document.getElementById("modal-title").innerText = course.name;
   document.getElementById("modal-code").innerText = course.code;
@@ -151,3 +147,16 @@ function closeModal() {
   document.getElementById("courseModal").style.display = "none";
 }
 
+// ====== 初始化 ======
+document.addEventListener("DOMContentLoaded", () => {
+  renderTable(courses);
+
+  document.getElementById("search-btn")
+    .addEventListener("click", () => renderTable(getFilteredCourses()));
+
+  document.getElementById("icon-search-btn")
+    .addEventListener("click", () => renderTable(getFilteredCourses()));
+
+  document.getElementById("reset-btn")
+    .addEventListener("click", resetFilters);
+});
